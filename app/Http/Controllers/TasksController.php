@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Task;
 
 class TasksController extends Controller
 {
@@ -11,7 +12,13 @@ class TasksController extends Controller
      */
     public function index()
     {
-        //
+        // タスク一覧を取得
+        $tasks = Task::all();         
+
+        // タスク一覧ビューでそれを表示
+        return view('tasks.index', [     
+            'tasks' => $tasks,        
+        ]);   
     }
 
     /**
