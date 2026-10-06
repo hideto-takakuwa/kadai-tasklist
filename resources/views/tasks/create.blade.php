@@ -42,16 +42,28 @@
 
 				{{-- タスク内容 --}}
 				<div class="mb-6">
-					<label for="content" class="label">
-						<span class="label-text">タスク内容</span>
+					<label for="status" class="label">
+						<span class="label-text">ステータス</span>
 					</label>
-
+					<input
+						type="text"
+						id="status"
+						name="status"
+						placeholder="ステータスを入力してください"
+						class="input input-bordered w-full"
+						value="{{ old('status') }}"
+						required
+					/>
+					<label for="content" class="label">
+						<span class="label-text">内容</span>
+					</label>
 					<input
 						type="text"
 						id="content"
 						name="content"
 						placeholder="タスクを入力してください"
 						class="input input-bordered w-full"
+						value="{{ old('content') }}"
 						required
 					/>
 				</div>

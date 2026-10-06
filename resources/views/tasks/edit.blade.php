@@ -46,8 +46,21 @@
 
 				{{-- タスク内容 --}}
 				<div class="mb-6">
+					<label for="status" class="label">
+						<span class="label-text">ステータス</span>
+					</label>
+
+					<input
+						type="text"
+						id="status"
+						name="status"
+						value="{{ $task->status }}"
+						class="input input-bordered w-full"
+						required
+					/>
+
 					<label for="content" class="label">
-						<span class="label-text">タスク内容</span>
+						<span class="label-text">内容</span>
 					</label>
 
 					<input
