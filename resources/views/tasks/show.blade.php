@@ -24,7 +24,6 @@
 					d="m15 18-6-6 6-6"
 				/>
 			</svg>
-
 			一覧へ戻る
 		</a>
 	</div>
@@ -33,34 +32,35 @@
 	<div class="card bg-base-100 shadow-sm border border-base-300">
 		<div class="card-body">
 
-			<h1 class="card-title text-2xl mb-4">
-				タスク詳細
-			</h1>
+			{{-- ステータス --}}
+			<div>
+				<span class="badge badge-ghost">
+					{{ $task->status }}
+				</span>
+			</div>
 
 			{{-- タスク内容 --}}
-			<div class="py-6">
-				<p class="text-lg">
+			<div class="py-4">
+				<p class="text-xl">
 					{{ $task->content }}
 				</p>
 			</div>
 
-			<div class="divider"></div>
+			<div class="divider my-2"></div>
 
 			{{-- 日時 --}}
-			<div class="text-sm text-base-content/60 space-y-1">
+			<div class="text-xs text-base-content/50 space-y-1">
 				<p>
-					作成日時：
-					{{ $task->created_at->format('Y/m/d H:i') }}
+					作成 {{ $task->created_at->format('Y/m/d H:i') }}
 				</p>
 
 				<p>
-					更新日時：
-					{{ $task->updated_at->format('Y/m/d H:i') }}
+					更新 {{ $task->updated_at->format('Y/m/d H:i') }}
 				</p>
 			</div>
 
 			{{-- 操作ボタン --}}
-			<div class="flex justify-end items-center gap-2 mt-6">
+			<div class="flex justify-end mt-4">
 
 				{{-- 編集 --}}
 				<a
@@ -85,7 +85,6 @@
 								4.5 0 0 1 1.13-1.897l8.932-8.931Z"
 						/>
 					</svg>
-
 					編集
 				</a>
 			</div>

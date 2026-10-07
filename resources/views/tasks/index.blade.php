@@ -42,9 +42,17 @@
 				<div class="card-body flex-row items-center justify-between py-4">
 
 					{{-- タスク内容 --}}
-					<p class="text-base">
-						{{ $task->content }}
-					</p>
+					<div class="min-w-0">
+						<div class="mb-1">
+							<span class="badge badge-ghost badge-sm">
+								{{ $task->status }}
+							</span>
+						</div>
+
+						<p class="text-base">
+							{{ $task->content }}
+						</p>
+					</div>
 
 					{{-- 操作 --}}
 					<div class="flex items-center gap-2">
